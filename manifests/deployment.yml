@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "restedsheepdogaks-5ac8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "restedsheepdogaks-5ac8"
+  template:
+    metadata:
+      labels:
+        app: "restedsheepdogaks-5ac8"
+    spec:
+      containers:
+        - name: "restedsheepdogaks-5ac8"
+          image: "akseval.azurecr.io/restedsheepdogaks"
+          ports:
+          - containerPort: 80
